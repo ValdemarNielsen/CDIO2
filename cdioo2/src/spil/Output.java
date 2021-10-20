@@ -26,8 +26,8 @@ public class Output {
     public void playerHasWon(){
         System.out.println("Player: "+" has won");
     }
-    public static void youRolled(){
-        System.out.println("you rolled");
+    public static String youRolled(){
+        return "you rolled";
     }
     public static void rollTheDie(){
         System.out.println("Roll the die");
