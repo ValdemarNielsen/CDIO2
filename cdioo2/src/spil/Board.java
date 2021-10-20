@@ -9,7 +9,7 @@ public class Board {
 
     public void generateBoard(){
         for(int i = 0; i < 11; i++){
-            spaces[i] = new Space(spaceValues[i + 2], spaceText[i + 2]);
+            spaces[i] = new Space(spaceValues[i], spaceText[i]);
         }
     }
 }
