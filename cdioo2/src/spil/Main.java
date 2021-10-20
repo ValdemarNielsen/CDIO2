@@ -23,9 +23,15 @@ public class Main {
 
         myBoard.generateBoard();
         Rafflecup myRafflecup = new Rafflecup(2, 6);
+        Output.startGame();
+        Scanner nextrne= new Scanner(System.in);
+        String next=nextrne.nextLine();
 
         while (!gameWon) {
+
+
             Player currentPlayer;
+
 
             if (playerTurn) {
                 currentPlayer = myPlayer1;
@@ -52,10 +58,15 @@ public class Main {
     }
 
     public static void playTurn(Player currPlayer, Rafflecup myRafflecup, Board myBoard) {
+        Scanner nextrn= new Scanner(System.in);
         Output.rollTheDie();
-        int result = myRafflecup.sum();
 
+        String next=nextrn.nextLine();
+        int result = myRafflecup.sum();
+        System.out.print(" "+result);
         String output = myBoard.spaces[result - 2].getOutput();
+        System.out.println();
+        System.out.println(output);
         int value = myBoard.spaces[result - 2].getValue();
         boolean extraTurnCheck = myBoard.spaces[result - 2].getExtraTurn();
 
@@ -63,6 +74,8 @@ public class Main {
         tempAcc.newBalance(value);
 
         System.out.println(currPlayer.getName() + Output.newBalance() + tempAcc.getBalance());
+        System.out.println();
+
 
         if (extraTurnCheck) {
             System.out.println(currPlayer.getName() + Output.anotherturn());

@@ -44,6 +44,9 @@ public class Output {
     public static void playerHasWon(String x){
         System.out.println("Player: "+x+" has won");
     }
+    public static void startGame(){
+        System.out.println("To start the game press enter, and press enter to roll the dice");
+    }
 
 
     }
