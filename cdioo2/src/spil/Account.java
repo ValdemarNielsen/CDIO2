@@ -11,19 +11,12 @@ public class Account {
     //Spillerne starter med en pengebeholdning på 1000.- og spiller lander på felterne hvor der gives og trækkes point
     //indtil man når en pengebeholdning på 3000.-
 
-    int startbal;
+    int startbal = 1000;
     int balance;
 
 
-    public static void main(String[] args) {
-        Account account = new Account(1000);
-    }
-
-
-    public Account(int x) {
-        startbal = x;
-        balance = startbal;
-
+    public Account() {
+        this.balance = startbal;
     }
 
     public int getBalance() {

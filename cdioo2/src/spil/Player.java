@@ -5,9 +5,10 @@ public class Player {
     private String name;
     private Account account;
 
-    public Player(String name, Account account){
-        this.name =name;
-        this.account =account;
+    public Player(String name){
+        this.name = name;
+        Account account = new Account();
+        this.account = account;
     }
 
     public String getName() {

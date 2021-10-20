@@ -2,7 +2,7 @@ package spil;
 
 public class Board {
 
-    Space[] spaces;
+    Space[] spaces = new Space[11];
     int[] spaceValues = {250, -100, 100, -20, 180, 0, -70, 60, -80, -50, 650};
 
     String[] spaceText = Output.spacetextGetter();
@@ -11,6 +11,10 @@ public class Board {
         for(int i = 0; i < 11; i++){
             spaces[i] = new Space(spaceValues[i], spaceText[i]);
         }
+    }
+
+    public Space[] spaceGetter(){
+        return spaces;
     }
 }
 
@@ -28,15 +32,7 @@ class Space{
         return value;
     }
 
-    public void setValue(int value) {
-        this.value = value;
-    }
-
     public String getOutput() {
         return output;
-    }
-
-    public void setOutput(String output) {
-        this.output = output;
     }
 }
