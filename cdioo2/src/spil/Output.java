@@ -19,6 +19,32 @@ public class Output {
     public static String[] spacetextGetter(){
         return spacetext;
     }
+    public static void playerName(int playerCounter) {
+        System.out.println("Enter player " + playerCounter + " name: ");
+        playerCounter++;
+    }
+    public void playerHasWon(){
+        System.out.println("Player: "+" has won");
+    }
+    public static void youRolled(){
+        System.out.println("you rolled");
+    }
+    public static void rollTheDie(){
+        System.out.println("Roll the die");
+    }
+    public static String sTurn(){
+        return "'s turn";
+    }
+    public static String newBalance(){
+        return " new balance: ";
+    }
+    public static String anotherturn(){
+        return " gets another turn!!!!!";
+    }
+    public static void playerHasWon(String x){
+        System.out.println("Player: "+x+" has won");
+    }
+
 
     }
 

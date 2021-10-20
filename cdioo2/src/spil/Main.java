@@ -1,6 +1,5 @@
 package spil;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main {
@@ -8,13 +7,13 @@ public class Main {
     public static void main(String[] args) {
         boolean playerTurn = false;
         boolean gameWon = false;
+        int playerCounter = 1;
 
         Scanner myScanner = new Scanner(System.in);
-
-        System.out.println("Enter player 1 name: ");
+        Output.playerName(playerCounter);
+        playerCounter++;
         String Player1 = myScanner.nextLine();
-
-        System.out.println("Enter player 2 name: ");
+        Output.playerName(playerCounter);
         String Player2 = myScanner.nextLine();
 
         Player myPlayer1 = new Player(Player1);
@@ -25,37 +24,35 @@ public class Main {
         myBoard.generateBoard();
         Rafflecup myRafflecup = new Rafflecup(2, 6);
 
-        while(!gameWon){
-            Player currentPlayer = myPlayer1;
+        while (!gameWon) {
+            Player currentPlayer;
 
-            if(playerTurn){
+            if (playerTurn) {
                 currentPlayer = myPlayer1;
-            }
-            else{
+            } else {
                 currentPlayer = myPlayer2;
             }
 
-            System.out.println(currentPlayer.getName() + "'s turn");
+            System.out.println(currentPlayer.getName() + Output.sTurn());
 
             playTurn(currentPlayer, myRafflecup, myBoard);
 
             playerTurn = !playerTurn;
 
-            if(myPlayer1.getAccount().getBalance() >= 3000 || myPlayer2.getAccount().getBalance() >= 3000){
+            if (myPlayer1.getAccount().getBalance() >= 3000 || myPlayer2.getAccount().getBalance() >= 3000) {
                 gameWon = true;
 
-                if(myPlayer1.getAccount().getBalance() >= 3000){
-                    myPlayer1.playerHasWon();
-                }
-                else{
-                    myPlayer2.playerHasWon();
+                if (myPlayer1.getAccount().getBalance() >= 3000) {
+                    Output.playerHasWon(myPlayer1.getName());
+                } else {
+                    Output.playerHasWon(myPlayer2.getName());
                 }
             }
         }
     }
 
-    public static void playTurn(Player currPlayer, Rafflecup myRafflecup, Board myBoard){
-        System.out.println("Roll the die");
+    public static void playTurn(Player currPlayer, Rafflecup myRafflecup, Board myBoard) {
+        Output.rollTheDie();
         int result = myRafflecup.sum();
 
         String output = myBoard.spaces[result - 2].getOutput();
@@ -65,12 +62,13 @@ public class Main {
         Account tempAcc = currPlayer.getAccount();
         tempAcc.newBalance(value);
 
-        System.out.println(currPlayer.getName() + " new balance: " + tempAcc.getBalance());
+        System.out.println(currPlayer.getName() + Output.newBalance() + tempAcc.getBalance());
 
-        if(extraTurnCheck){
-            System.out.println(currPlayer.getName() + " gets another turn!!!!!");
+        if (extraTurnCheck) {
+            System.out.println(currPlayer.getName() + Output.anotherturn());
             playTurn(currPlayer, myRafflecup, myBoard);
         }
     }
+
 
 }

@@ -5,7 +5,7 @@ public class Player {
     private String name;
     private Account account;
 
-    public Player(String name){
+    public Player(String name) {
         this.name = name;
         this.account = new Account();
     }
@@ -17,8 +17,6 @@ public class Player {
     public Account getAccount() {
         return account;
     }
-    public void playerHasWon(){
-        System.out.println("Player: "+this.name+" has won");
-    }
+
 
 }
