@@ -7,8 +7,7 @@ public class Player {
 
     public Player(String name){
         this.name = name;
-        Account account = new Account();
-        this.account = account;
+        this.account = new Account();
     }
 
     public String getName() {
