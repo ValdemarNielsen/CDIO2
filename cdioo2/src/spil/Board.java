@@ -9,7 +9,12 @@ public class Board {
 
     public void generateBoard(){
         for(int i = 0; i < 11; i++){
-            spaces[i] = new Space(spaceValues[i], spaceText[i]);
+            if(i == 8){
+                spaces[i] = new Space(spaceValues[i], spaceText[i], true);
+            }
+            else{
+                spaces[i] = new Space(spaceValues[i], spaceText[i], false);
+            }
         }
     }
 
@@ -22,14 +27,20 @@ class Space{
 
     int value;
     String output;
+    boolean extraTurn;
 
-    Space(int valuePass, String outputPass){
+    Space(int valuePass, String outputPass, boolean extraTurnPass){
         this.value = valuePass;
         this.output = outputPass;
+        this.extraTurn = extraTurnPass;
     }
 
     public int getValue() {
         return value;
+    }
+
+    public boolean getExtraTurn() {
+        return extraTurn;
     }
 
     public String getOutput() {

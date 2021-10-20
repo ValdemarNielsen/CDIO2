@@ -1,11 +1,13 @@
 package spil;
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
         boolean playerTurn = false;
+        boolean gameWon = false;
 
         Scanner myScanner = new Scanner(System.in);
 
@@ -18,26 +20,56 @@ public class Main {
         Player myPlayer1 = new Player(Player1);
         Player myPlayer2 = new Player(Player2);
 
-
-
         Board myBoard = new Board();
 
         myBoard.generateBoard();
-
         Rafflecup myRafflecup = new Rafflecup(2, 6);
+
+        while(!gameWon){
+            Player currentPlayer = myPlayer1;
+
+            if(playerTurn){
+                currentPlayer = myPlayer1;
+            }
+            else{
+                currentPlayer = myPlayer2;
+            }
+
+            System.out.println(currentPlayer.getName() + "'s turn");
+
+            playTurn(currentPlayer, myRafflecup, myBoard);
+
+            playerTurn = !playerTurn;
+
+            if(myPlayer1.getAccount().getBalance() >= 3000 || myPlayer2.getAccount().getBalance() >= 3000){
+                gameWon = true;
+
+                if(myPlayer1.getAccount().getBalance() >= 3000){
+                    System.out.println("Player " + myPlayer1.getName() + " won.");
+                }
+                else{
+                    System.out.println("Player " + myPlayer2.getName() + " won.");
+                }
+            }
+        }
+    }
+
+    public static void playTurn(Player currPlayer, Rafflecup myRafflecup, Board myBoard){
+        System.out.println("Roll the die");
         int result = myRafflecup.sum();
 
-        String outputTest = myBoard.spaces[result - 2].getOutput();
-        int valueTest = myBoard.spaces[result - 2].getValue();
+        String output = myBoard.spaces[result - 2].getOutput();
+        int value = myBoard.spaces[result - 2].getValue();
+        boolean extraTurnCheck = myBoard.spaces[result - 2].getExtraTurn();
 
-        Account tempAcc = myPlayer1.getAccount();
-        int balTest = tempAcc.getBalance();
+        Account tempAcc = currPlayer.getAccount();
+        tempAcc.newBalance(value);
 
-        System.out.println(balTest);
-        tempAcc.newBalance(valueTest);
-        balTest = tempAcc.getBalance();
-        System.out.println(balTest);
+        System.out.println(currPlayer.getName() + " new balance: " + tempAcc.getBalance());
 
-        System.out.println(outputTest);
+        if(extraTurnCheck){
+            System.out.println(currPlayer.getName() + " gets another turn!!!!!");
+            playTurn(currPlayer, myRafflecup, myBoard);
+        }
     }
 }
