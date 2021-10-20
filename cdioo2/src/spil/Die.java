@@ -2,12 +2,13 @@ package spil;
 
 public class Die {
     private int value;
-    private  int faceAmount;
+    private int faceAmount;
 
     public Die(int faceAmount) {
-        this.faceAmount=faceAmount;
-        this.value=1;
+        this.faceAmount = faceAmount;
+        this.value = 1;
     }
+
     public void setFaceAmount(int faceAmount) {
         this.faceAmount = faceAmount;
     }
@@ -23,8 +24,9 @@ public class Die {
     public int getFaceAmount() {
         return faceAmount;
     }
-    public void roll(){
-        value=(int) (Math.random()*faceAmount+1);
+
+    public void roll() {
+        value = (int) (Math.random() * faceAmount + 1);
     }
 
 
