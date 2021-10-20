@@ -17,5 +17,8 @@ public class Player {
     public Account getAccount() {
         return account;
     }
+    public void playerHasWon(){
+        System.out.println("Player: "+this.name+" has won");
+    }
 
 }

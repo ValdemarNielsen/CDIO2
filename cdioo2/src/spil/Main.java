@@ -45,10 +45,10 @@ public class Main {
                 gameWon = true;
 
                 if(myPlayer1.getAccount().getBalance() >= 3000){
-                    System.out.println("Player " + myPlayer1.getName() + " won.");
+                    myPlayer1.playerHasWon();
                 }
                 else{
-                    System.out.println("Player " + myPlayer2.getName() + " won.");
+                    myPlayer2.playerHasWon();
                 }
             }
         }
@@ -72,4 +72,5 @@ public class Main {
             playTurn(currPlayer, myRafflecup, myBoard);
         }
     }
+
 }
