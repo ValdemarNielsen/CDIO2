@@ -1,5 +1,6 @@
 package spil;
 
+import java.util.Arrays;
 import java.util.stream.IntStream;
 
 public class Rafflecup {
@@ -13,7 +14,8 @@ public class Rafflecup {
             this.cup[i] = die1;
         }
     }
-    public void configure(int diceAmount, int faceAmount){
+// One setter method when you want to configure your Rafflecup instead of 2
+    public void configure(int diceAmount, int faceAmount) {
         Die die1 = new Die(faceAmount);
         this.cup = new Die[diceAmount];
         for (int i = 0; i < diceAmount; i++) {
@@ -25,7 +27,8 @@ public class Rafflecup {
     public Die[] getCup() {
         return cup;
     }
-    public int getDiceAmount(){
+
+    public int getDiceAmount() {
         return diceAmount;
     }
 
@@ -48,6 +51,7 @@ public class Rafflecup {
             values[i] = cup[i].getValue();
 
         }
+        System.out.println(Arrays.toString(values));
         return values;
 
 
