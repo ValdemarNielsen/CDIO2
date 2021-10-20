@@ -4,12 +4,12 @@ public class Board {
 
 }
 
-class Spaces{
+class Space{
 
     int value;
     String output;
 
-    Spaces(int valuePass, String outputPass){
+    Space(int valuePass, String outputPass){
         this.value = valuePass;
         this.output = outputPass;
     }
