@@ -29,6 +29,10 @@ public class Account {
 
     public void newBalance (int ubalance){
         this.balance += ubalance;
+        
+        if(this.balance < 0){
+            this.balance = 0;
+        }
 
     }
 
