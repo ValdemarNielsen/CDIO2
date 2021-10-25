@@ -46,7 +46,7 @@ public class Rafflecup {
             values[i] = cup[i].getValue();
 
         }
-        System.out.print(Output.youRolled() + Arrays.toString(values));
+        System.out.print(Output.youRolled() +" "+ Arrays.toString(values));
         return values;
 
 
