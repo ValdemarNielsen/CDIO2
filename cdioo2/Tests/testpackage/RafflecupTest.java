@@ -9,6 +9,9 @@ import static org.junit.jupiter.api.Assertions.*;
 class RafflecupTest {
     Rafflecup calculator=new Rafflecup(2,6);
 
+    /**
+     * En test der tjekker om faceamount og sideamount passer med random input.
+     */
     @Test
     void configure() {
         int diceAmount = (int) (Math.random() * 999 + 1);
@@ -22,6 +25,9 @@ class RafflecupTest {
 
     }
 
+    /**
+     * Tjekker om en sum er som forventet, Giver fail hvis ikke.
+     */
     @Test
     void sum() {
         int diceAmount = (int) (Math.random() * 999 + 1);

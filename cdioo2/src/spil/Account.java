@@ -11,8 +11,8 @@ public class Account {
     //Spillerne starter med en pengebeholdning på 1000.- og spiller lander på felterne hvor der gives og trækkes point
     //indtil man når en pengebeholdning på 3000.-
 
-    int startbal = 1000;
-    int balance;
+    private int startbal = 1000;
+    private int balance;
 
 
     public Account() {
