@@ -3,9 +3,8 @@ package spil;
 public class Board {
 
     Space[] spaces = new Space[11];
-    int[] spaceValues = {250, -100, 100, -20, 180, 0, -70, 60, -80, -50, 650};
-
-    String[] spaceText = Output.spacetextGetter();
+    private int[] spaceValues = {250, -100, 100, -20, 180, 0, -70, 60, -80, -50, 650};
+    private String[] spaceText = Output.spacetextGetter();
 
     public void generateBoard(){
         for(int i = 0; i < 11; i++){
@@ -25,9 +24,9 @@ public class Board {
 
 class Space{
 
-    int value;
-    String output;
-    boolean extraTurn;
+    private int value;
+    private String output;
+    private boolean extraTurn;
 
     Space(int valuePass, String outputPass, boolean extraTurnPass){
         this.value = valuePass;
