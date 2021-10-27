@@ -32,10 +32,7 @@ public class DemandedTests {
         assertTrue(check);
 
     }
-    @Test
-    void dieRollPrabablility(){
 
-    }
 
 }
 
