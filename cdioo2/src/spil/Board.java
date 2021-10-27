@@ -3,7 +3,7 @@ package spil;
 public class Board {
 
     Space[] spaces = new Space[11];
-    private int[] spaceValues = {250, -100, 100, -20, 180, 0, -70, 60, -80, -50, 650};
+    final int[] spaceValues = {250, -100, 100, -20, 180, 0, -70, 60, -80, -50, 650};
     private String[] spaceText = Output.spacetextGetter();
 
     public void generateBoard(){
@@ -15,6 +15,10 @@ public class Board {
                 spaces[i] = new Space(spaceValues[i], spaceText[i], false);
             }
         }
+    }
+
+    public int[] getSpaceValues() {
+        return spaceValues;
     }
 
     public Space[] spaceGetter(){
