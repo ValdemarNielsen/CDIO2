@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Main {
 
+
     public static void main(String[] args) {
         boolean playerTurn = false;
         boolean gameWon = false;
@@ -24,8 +25,8 @@ public class Main {
         myBoard.generateBoard();
         Rafflecup myRafflecup = new Rafflecup(2, 6);
         Output.startGame();
-        Scanner nextrne= new Scanner(System.in);
-        String next=nextrne.nextLine();
+        Scanner nextrne = new Scanner(System.in);
+        String next = nextrne.nextLine();
 
         while (!gameWon) {
 
@@ -58,12 +59,12 @@ public class Main {
     }
 
     public static void playTurn(Player currPlayer, Rafflecup myRafflecup, Board myBoard) {
-        Scanner nextrn= new Scanner(System.in);
+        Scanner nextrn = new Scanner(System.in);
         Output.rollTheDie();
 
-        String next=nextrn.nextLine();
+        String next = nextrn.nextLine();
         int result = myRafflecup.sum();
-        System.out.print(" "+result);
+        System.out.print(" " + result);
         String output = myBoard.spaces[result - 2].getOutput();
         System.out.println();
         System.out.println(output);
