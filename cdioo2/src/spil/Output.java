@@ -23,9 +23,6 @@ public class Output {
         System.out.println("Enter player " + playerCounter + " name: ");
         playerCounter++;
     }
-    public void playerHasWon(){
-        System.out.println("Player: "+" has won");
-    }
     public static String youRolled(){
         return "you rolled";
     }
@@ -47,9 +44,7 @@ public class Output {
     public static void startGame(){
         System.out.println("To start the game press enter, and press enter to roll the dice");
     }
-
-
-    }
+}
 
 
 

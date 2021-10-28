@@ -22,7 +22,6 @@ public class Rafflecup {
         for (int i = 0; i < diceAmount; i++) {
             this.cup[i] = die1;
         }
-
     }
 
     public Die[] getCup() {

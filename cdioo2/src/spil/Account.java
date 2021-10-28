@@ -13,8 +13,7 @@ public class Account {
 
     private int startbal = 1000;
     private int balance;
-
-
+    
     public Account() {
         this.balance = startbal;
     }
@@ -29,7 +28,7 @@ public class Account {
 
     public void newBalance (int ubalance){
         this.balance += ubalance;
-        
+
         if(this.balance < 0){
             this.balance = 0;
         }

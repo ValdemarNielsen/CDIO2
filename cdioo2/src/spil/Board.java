@@ -7,7 +7,7 @@ public class Board {
     private String[] spaceText = Output.spacetextGetter();
 
     public void generateBoard(){
-        for(int i = 0; i < 11; i++){
+        for(int i = 0; i < spaces.length; i++){
             if(i == 8){
                 spaces[i] = new Space(spaceValues[i], spaceText[i], true);
             }

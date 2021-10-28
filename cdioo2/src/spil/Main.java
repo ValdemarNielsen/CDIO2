@@ -13,26 +13,23 @@ public class Main {
         Scanner myScanner = new Scanner(System.in);
         Output.playerName(playerCounter);
         playerCounter++;
-        String Player1 = myScanner.nextLine();
+        String Player1Name = myScanner.nextLine();
         Output.playerName(playerCounter);
-        String Player2 = myScanner.nextLine();
+        String Player2Name = myScanner.nextLine();
 
-        Player myPlayer1 = new Player(Player1);
-        Player myPlayer2 = new Player(Player2);
+        Player myPlayer1 = new Player(Player1Name);
+        Player myPlayer2 = new Player(Player2Name);
 
         Board myBoard = new Board();
-
         myBoard.generateBoard();
+
         Rafflecup myRafflecup = new Rafflecup(2, 6);
         Output.startGame();
         Scanner nextrne = new Scanner(System.in);
         String next = nextrne.nextLine();
 
         while (!gameWon) {
-
-
             Player currentPlayer;
-
 
             if (playerTurn) {
                 currentPlayer = myPlayer1;
@@ -77,12 +74,9 @@ public class Main {
         System.out.println(currPlayer.getName() + Output.newBalance() + tempAcc.getBalance());
         System.out.println();
 
-
         if (extraTurnCheck) {
             System.out.println(currPlayer.getName() + Output.anotherturn());
             playTurn(currPlayer, myRafflecup, myBoard);
         }
     }
-
-
 }
