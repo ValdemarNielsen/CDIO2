@@ -1,11 +1,10 @@
 package spil;
 
-import java.util.*;
-import java.lang.*;
+
 
 public class Account {
     // Our start balance and balance.
-    private int startbal = 1000;
+    private final int startbal = 1000;
     private int balance;
 
     // Sets balance to our startbalance

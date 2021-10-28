@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.stream.IntStream;
 
 public class Rafflecup {
-    private int diceAmount;
     private Die[] cup;
 
     public Rafflecup(int diceAmount, int faceAmount) {
@@ -28,9 +27,6 @@ public class Rafflecup {
         return cup;
     }
 
-    public int getDiceAmount() {
-        return diceAmount;
-    }
 
 
     public int sum() {

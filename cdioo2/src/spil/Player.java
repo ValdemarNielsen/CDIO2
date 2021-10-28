@@ -2,8 +2,8 @@ package spil;
 
 public class Player {
 
-    private String name;
-    private Account account;
+    private final String name;
+    private final Account account;
 
     public Player(String name) {
         this.name = name;

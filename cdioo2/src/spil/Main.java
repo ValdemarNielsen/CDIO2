@@ -87,14 +87,14 @@ public class Main {
         boolean extraTurnCheck = myBoard.spaces[result - 2].getExtraTurn();
 
         // Prints the result
-        System.out.println("/n" + output);
+        System.out.println("\n" + output);
 
         // Gets the temporary account from current player and updates the balance
         Account tempAcc = currPlayer.getAccount();
         tempAcc.newBalance(value);
 
         // Prints player name and their new balance
-        System.out.println(currPlayer.getName() + Output.newBalance() + tempAcc.getBalance() + "/n");
+        System.out.println(currPlayer.getName() + Output.newBalance() + tempAcc.getBalance() + "\n");
 
         // Checks if the player has an extra turn, if they do, call this function again
         if (extraTurnCheck) {

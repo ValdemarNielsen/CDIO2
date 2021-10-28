@@ -2,7 +2,7 @@ package spil;
 
 public class Output {
 
-    private static String[] spacetext = {
+    private final static String[] spacetext = {
             "You found a chest inside the Tower! You have been rewarded with 250 points",
             "You landed in the Crater, and dropped 100 points on the way",
             "Upon arriving at the Palace Gates, you received 100 points",
@@ -21,7 +21,6 @@ public class Output {
     }
     public static void playerName(int playerCounter) {
         System.out.println("Enter player " + playerCounter + " name: ");
-        playerCounter++;
     }
     public static String youRolled(){
         return "you rolled";
