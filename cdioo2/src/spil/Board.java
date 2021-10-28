@@ -2,10 +2,12 @@ package spil;
 
 public class Board {
 
+    // Creates an array of our space objects, an int array for the values, and an array of the output texts
     Space[] spaces = new Space[11];
     final int[] spaceValues = {250, -100, 100, -20, 180, 0, -70, 60, -80, -50, 650};
     private String[] spaceText = Output.spacetextGetter();
 
+    // Generates the board and passes all the variables to the specific spaces
     public void generateBoard(){
         for(int i = 0; i < spaces.length; i++){
             if(i == 8){
